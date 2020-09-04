@@ -1,0 +1,37 @@
+<?xml version= "1.0"?>
+<base>
+    <!-- TimeBetweenFrames is the time per frame (in milliseconds) of a shader only desktop, since gifs have their own timing -->
+	<TimeBetweenFrames>100</TimeBetweenFrames>
+
+    <!-- TimeToDisplay is the time to display a background before swapping to the next one (in milliseconds) -->
+	<TimeToDisplay>60000</TimeToDisplay>
+
+    <!-- Whether or not to use the mouse in shaders (iMouse in shader is zero if false) -->
+    <UseMouse>true</UseMouse>
+
+	<Files>
+	    <!-- Name these whatever you want -->
+		<Background1>
+
+		    <!-- Texture specifies a texture or directory of textures to load -->
+		    <Texture>Backgrounds\</Texture>
+
+		    <!--  Shader specifies the shader to use on the texture(s) specified above -->
+		    <Shader>Shader.glsl</Shader>
+
+		    <!-- You can also change any of the above settings for this entry alone -->
+		    <UseMouse>false</UseMouse>
+		    <TimeBetweenFrames>200</TimeBetweenFrames>
+		</Background1>
+
+		<Background2>
+		    <!-- You can go only shaders -->
+		    <Shader>Shader.glsl</Shader>
+		</Background2>
+
+		<Background3>
+		    <!-- or only a single image -->
+		    <Texture>Tex.gif</Texture>
+		</Background3>
+	</Files>
+</base>
