@@ -179,6 +179,7 @@ bool ParseArguments(int argc, char* argv[], std::string& configFile, uint32_t& t
             }
             configFile = std::string(argv[counter]);
         }
+        else
         if(std::string(argv[counter]) == "--threads")
         {
             counter++;
