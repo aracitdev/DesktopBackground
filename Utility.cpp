@@ -1,4 +1,5 @@
 #include "Utility.h"
+#include <filesystem>
 
 bool DirectoryExists(const std::string& filename)
 {

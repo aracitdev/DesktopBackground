@@ -4,3 +4,5 @@ Uses config.xml to tell which shaders/textures to use. If no texture is specifie
 When a path is specified under textures, it will add all of the files in that path.
 
 There are also some commands to help you out, just do DesktopBackground --help to get info on them.
+
+Depends on Magick and tinyxml2.

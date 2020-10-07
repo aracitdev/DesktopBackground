@@ -1,3 +1,5 @@
 *.cpb
 *.layout
 *.depend
+bin/
+obj/

@@ -97,7 +97,7 @@ bool LoadConfig(const std::string& filename, std::vector<DesktopEntry*>& entries
     }
 
     for(tinyxml2::XMLElement* currentFile=fileElement->FirstChildElement(); currentFile != nullptr; currentFile=currentFile->NextSiblingElement())  //loop through each element under files
-    {
+    {   //this is run for each group under the Files element
         bool useMouse = defaultUseMouse;
         size_t timeBetweenFrames = defaultTimeBetweenFrames;
         size_t timeToDisplay = defaultTimeToDisplay;
@@ -107,16 +107,16 @@ bool LoadConfig(const std::string& filename, std::vector<DesktopEntry*>& entries
         std::string shaderFile;
 
         tinyxml2::XMLElement* shaderFileElement=currentFile->FirstChildElement("Shader");
-        if(shaderFileElement)
+        if(shaderFileElement)   //the shader
             shaderFile=shaderFileElement->GetText();
 
         tinyxml2::XMLElement* textureFileElement=currentFile->FirstChildElement("Texture");
-        if(textureFileElement)
+        if(textureFileElement) //the texture (or textures folder)
             textureFile=textureFileElement->GetText();
         std::cout <<textureFile <<" " <<shaderFile<<"\n";
 
         sf::Shader* shader=nullptr;
-        if(!shaderFile.empty() && Exist(shaderFile))
+        if(!shaderFile.empty() && Exist(shaderFile))    //load the shader for this group
         {
 
             if(!shaderFile.empty())
@@ -204,15 +204,6 @@ bool ParseArguments(int argc, char* argv[], std::string& configFile, uint32_t& t
     }
     return true;
 }
-
-void terminate(void)
-{
-    while(1)
-    {
-        sf::sleep(sf::seconds(1));
-    }
-}
-
 
 void RunThread(void* ptr)
 {
